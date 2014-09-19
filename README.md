@@ -21,6 +21,7 @@ Features
 
 - The image will upscaled such that all of the grid squares are even in size
 - Any output format can be specified
+- Output path can also be specified
 
 Screenshots
 -----------

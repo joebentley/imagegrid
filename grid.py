@@ -21,6 +21,8 @@ def parseArgs():
     parser.add_argument('-t', nargs=1, metavar='filetype', default='',
                         help='File type to save as, leave blank ' + \
                         'for same type as source file')
+    parser.add_argument('-o', nargs=1, metavar='output_filename', default='',
+                        help='Name to save output image as')
     return parser.parse_args()
 
 def main():
@@ -52,6 +54,15 @@ def main():
             pix[x, y * w] = (0, 0, 0)
 
     path, extension = os.path.splitext(args.path)
+
+    # Save with user-specified output name
+    if args.o and not args.t:
+        im.save(args.o[0] + extension)
+        return
+    elif args.o and args.t:
+        im.save(args.o[0] + '.' + args.t[0])
+        return
+
     if not args.t:
         im.save('grid_' + path + extension)
     else:
