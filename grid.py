@@ -64,9 +64,9 @@ def main():
         return
 
     if not args.t:
-        im.save('grid_' + path + extension)
+        im.save(path + '_grid' + extension)
     else:
-        im.save('grid_' + path + '.' + args.t[0])
+        im.save(path + '_grid.' + args.t[0])
 
 if __name__ == "__main__":
     main()
