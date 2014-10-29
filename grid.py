@@ -1,6 +1,6 @@
 #!/usr/local/bin/python
 
-import argparse, os, fractions
+import argparse, os
 from PIL import Image
 
 """
@@ -33,7 +33,7 @@ def main():
 
     # Sample up the size of the image for even devisions, maintaining ratio
     # If we didn't do this, then some squares would be bigger than others due
-    # to non-even square widths in pixels
+    # to due to uneven numbers of pixels between squares
     ratio = im.size[0] / im.size[1]
     im = im.resize((im.size[0] * nVert / 10, im.size[1] * nVert / 10))
 
