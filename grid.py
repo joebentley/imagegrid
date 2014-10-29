@@ -17,15 +17,15 @@ requires Python Imaging Library (PIL) or Pillow
 
 # Parse command line args
 def parseArgs():
-    parser = argparse.ArgumentParser(description='Take an image and save ' + \
+    parser = argparse.ArgumentParser(description='Take an image and save ' +
                                                  'a new one with a grid overlaid')
     parser.add_argument('path', metavar='path_to_image',
                         help='Relative path to image')
     parser.add_argument('ylines', type=int, metavar='number_of_lines',
-                        help='Number of vertical lines we ' + \
+                        help='Number of vertical lines we ' +
                         'want to split the image into')
     parser.add_argument('-t', nargs=1, metavar='filetype', default='',
-                        help='File type to save as, leave blank ' + \
+                        help='File type to save as, leave blank ' +
                         'for same type as source file')
     parser.add_argument('-o', nargs=1, metavar='output_filename', default='',
                         help='Name to save output image as')
