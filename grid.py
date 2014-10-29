@@ -4,7 +4,13 @@ import argparse, os
 from PIL import Image
 
 """
-grid.py [-h] [-t filetype] path_to_image number_of_lines
+grid.py [-h] [-t filetype] [-o output_file] path_to_image number_of_lines
+
+Takes an image specified in path_to_image, and outputs a new copy of the
+image with a black square grid overlayed on top of it. The file will be
+saved with the same format as the input file by default, unless specified
+with -t. The output file will be the input filepath with '_grid' appended
+unless specified with -o.
 
 requires Python Imaging Library (PIL) or Pillow
 """
@@ -42,8 +48,8 @@ def main():
     w = im.size[0] / nVert # Space between each line
     nHoriz = im.size[1] / w # No. horizontal lines
 
-    # Cycle through each x value, cycle down every y value to draw line
-    # at x = x * the number of lines on the image
+    # Draw vertical lines by drawing pixels at every y value at each
+    # x value that is a multiple of the width of a single square
     for x in range(1, nVert):
         for y in range(0, im.size[1]):
             pix[x * w - 1, y] = (0, 0, 0)
