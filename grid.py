@@ -37,7 +37,7 @@ def main():
 
     nVert = args.ylines # No. vert lines
 
-    # Sample up the size of the image for even devisions, maintaining ratio
+    # Sample up the size of the image for even divisions, maintaining ratio
     # If we didn't do this, then some squares would be bigger than others due
     # to due to uneven numbers of pixels between squares
     ratio = im.size[0] / im.size[1]
