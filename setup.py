@@ -1,11 +1,11 @@
-from setuptools import setup
+from setuptools import setup, find_packages
 
 setup(
     name='imagegrid',
     version='0.1',
-    py_modules=['grid'],
+    scripts=['grid.py'],
     entry_points='''
         [console_scripts]
         imagegrid=grid:main
-    ''',
+    '''
 )
