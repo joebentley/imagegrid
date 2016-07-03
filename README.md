@@ -7,11 +7,11 @@ To install,
 
     git clone https://github.com/unanimousarc/imagegrid
     cd imagegrid
-    python setup.py install
+    python3 setup.py install
 
 To use,
 
-    python grid.py [-h] [-t filetype] path_to_image number_of_lines
+    python3 grid.py [-h] [-t filetype] [--index] path_to_image number_of_lines
 
 Requirements
 ------------

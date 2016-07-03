@@ -27,9 +27,9 @@ def grid(im, ylines, draw_indices):
 
     # Sample up the size of the image for even divisions, maintaining ratio
     # If we didn't do this, then some squares would be bigger than others due
-    # to due to uneven numbers of pixels between squares
+    # to due to uneven numbers of pixels between each square
     ratio = im.size[0] / im.size[1]
-    im = im.resize((int(im.size[0] * nVert / 10), int(im.size[1] * nVert / 10)))
+    im = im.resize((math.floor(im.size[0] * nVert / 10), math.floor(im.size[1] * nVert / 10)))
 
     pix = im.load() # Load image pixels for editing
 
