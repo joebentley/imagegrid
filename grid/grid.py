@@ -1,6 +1,6 @@
 #!/usr/local/bin/python
 
-import argparse, os
+import argparse, os, math
 from PIL import Image, ImageDraw, ImageFont
 
 """
@@ -29,12 +29,12 @@ def grid(im, ylines, draw_indices):
     # If we didn't do this, then some squares would be bigger than others due
     # to due to uneven numbers of pixels between squares
     ratio = im.size[0] / im.size[1]
-    im = im.resize((im.size[0] * nVert / 10, im.size[1] * nVert / 10))
+    im = im.resize((int(im.size[0] * nVert / 10), int(im.size[1] * nVert / 10)))
 
     pix = im.load() # Load image pixels for editing
 
-    w = im.size[0] / nVert # Space between each line
-    nHoriz = im.size[1] / w # No. horizontal lines
+    w = math.floor(im.size[0] / nVert) # Space between each line
+    nHoriz = math.floor(im.size[1] / w) # No. horizontal lines
 
     # Draw vertical lines by drawing pixels at every y value at each
     # x value that is a multiple of the width of a single square
@@ -56,7 +56,7 @@ def grid(im, ylines, draw_indices):
         # Draw indices
         draw = ImageDraw.Draw(temp)
 
-        fnt = ImageFont.truetype('fonts/Minecraft.ttf', 40)
+        fnt = ImageFont.truetype(os.path.join(os.path.dirname(__file__), 'fonts/Minecraft.ttf'), 40)
         for x in range(0, nVert):
             draw.text((x * w + pad, 10), str(x), font=fnt, fill=0)
         for y in range(0, nHoriz):
