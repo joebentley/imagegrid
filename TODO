@@ -3,3 +3,4 @@
 https://setuptools.readthedocs.io/en/latest/setuptools.html#including-data-files
 
 - Fix positioning of indices
+    - Make centering a bit better

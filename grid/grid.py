@@ -50,17 +50,18 @@ def grid(im, ylines, draw_indices):
     # Add border to top-left of image
     if draw_indices:
         pad = 150
+
         temp = Image.new(im.mode, (im.size[0] + pad, im.size[1] + pad), color=(255, 255, 255))
         temp.paste(im, (pad, pad))
 
         # Draw indices
         draw = ImageDraw.Draw(temp)
 
-        fnt = ImageFont.truetype(os.path.join(os.path.dirname(__file__), 'fonts/Minecraft.ttf'), 40)
+        fnt = ImageFont.truetype(os.path.join(os.path.dirname(__file__), 'fonts/Minecraft.ttf'), 50)
         for x in range(0, nVert):
-            draw.text((x * w + pad, 10), str(x), font=fnt, fill=0)
+            draw.text((x * w + pad + w / 2, 10), str(x), font=fnt, fill=0)
         for y in range(0, nHoriz):
-            draw.text((10, y * w + pad), str(y), font=fnt, fill=0)
+            draw.text((10, y * w + pad + w / 2), str(y), font=fnt, fill=0)
 
         im = temp
 
