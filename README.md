@@ -5,7 +5,7 @@ PyImageGrid is a small python app that draws a grid on an image. It is intended 
 
 To install,
 
-    git clone https://github.com/unanimousarc/imagegrid
+    git clone https://github.com/joebentley/imagegrid
     cd imagegrid
     python3 setup.py install
 
