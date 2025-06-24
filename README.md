@@ -34,6 +34,6 @@ Before
 
 After
 
-![](grid_sample.jpg)
+![](sample_grid.jpg)
 
 (Image by Smalljim [Smalljim](http://en.wikipedia.org/wiki/Goon_Gumpas#mediaviewer/File:Goon_Gumpas_from_Wheal_Maid_DSC_2951.jpg) licensed under CC BY-SA 3.0)
